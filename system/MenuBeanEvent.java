@@ -1,12 +1,9 @@
 package system;
 
-import java.util.EventObject;
-
-public class MenuBeanEvent extends EventObject {
+public class MenuBeanEvent{
     private String evtInfo;
 
-    public MenuBeanEvent(Object o, String t) {
-        super(o);
+    public MenuBeanEvent(String t) {
         evtInfo = t;
     }
 

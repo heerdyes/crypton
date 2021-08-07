@@ -1,11 +1,8 @@
 package system;
 
-import java.awt.Toolkit;
-import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.JToggleButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
 public class DialogBean extends JDialog implements ActionListener {
     private JPanel panel;
@@ -16,8 +13,12 @@ public class DialogBean extends JDialog implements ActionListener {
         super();
         
         setTitle(title);
-        setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 4, Toolkit.getDefaultToolkit().getScreenSize().height / 4);
-        setSize(Toolkit.getDefaultToolkit().getScreenSize().width / 2, Toolkit.getDefaultToolkit().getScreenSize().height / 2);
+        Toolkit tk=Toolkit.getDefaultToolkit();
+        Dimension dim=tk.getScreenSize();
+        int w=dim.width;
+        int h=dim.height;
+        setLocation(w / 4, h / 4);
+        setSize(w / 2, h / 2);
         
         panel = new JPanel();
         tb = new JToggleButton("subtle");
@@ -40,7 +41,7 @@ public class DialogBean extends JDialog implements ActionListener {
     }
     
     public void actionPerformed(ActionEvent e) {
-        DialogBeanEvent dbe = new DialogBeanEvent(e, e.getSource().toString());
+        DialogBeanEvent dbe = new DialogBeanEvent(e.getSource().toString());
         fireDialogBeanEvent(dbe);
     }
 }

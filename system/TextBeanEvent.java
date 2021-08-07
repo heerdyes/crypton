@@ -1,12 +1,17 @@
 package system;
 
-import java.util.EventObject;
-
-public class TextBeanEvent extends EventObject {
-    private String evtInfo;
+public class TextBeanEvent{
+    String evtInfo;
     
-    public TextBeanEvent(Object o, String s) {
-        super(o);
+    public TextBeanEvent(String s) {
         evtInfo = s;
+    }
+    
+    public String getEvtInfo(){
+      return evtInfo;
+    }
+    
+    public String toString(){
+      return evtInfo;
     }
 }

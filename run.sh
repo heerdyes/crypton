@@ -1,1 +1,1 @@
-java system.Main
+java -cp out system.Main

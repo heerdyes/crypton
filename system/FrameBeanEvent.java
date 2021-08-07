@@ -1,12 +1,9 @@
 package system;
 
-import java.util.EventObject;
-
-public class FrameBeanEvent extends EventObject {
+public class FrameBeanEvent{
     private String evtInfo;
     
-    public FrameBeanEvent(Object o, String s) {
-        super(o);
+    public FrameBeanEvent(String s) {
         evtInfo = s;
     }
     

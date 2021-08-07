@@ -1,13 +1,3 @@
-javac system/Main.java
-javac system/FrameBean.java
-javac system/FrameBeanEvent.java
-javac system/FrameBeanListener.java
-javac system/MenuBean.java
-javac system/MenuBeanEvent.java
-javac system/MenuBeanListener.java
-javac system/TextBean.java
-javac system/TextBeanEvent.java
-javac system/TextBeanListener.java
-javac system/DialogBean.java
-javac system/DialogBeanEvent.java
-javac system/DialogBeanListener.java
+rm -rf out
+mkdir -p out
+javac -d out system/*.java
